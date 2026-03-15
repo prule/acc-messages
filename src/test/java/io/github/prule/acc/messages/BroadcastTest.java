@@ -29,16 +29,24 @@ class BroadcastTest {
 
   private static Stream<Arguments> provideResults() {
     return Stream.of(
-        Arguments.of(
-            "0705090030313a33332e36393511cf0d0000000000",
-            expect(2, 3, "ERRR")));
+            Arguments.of(
+                    "0705090030313a33332e36393511cf0d0000000000",
+                    expect(
+                            AccBroadcastingInbound.BroadcastType.LAPCOMPLETED,
+                            "01:33.695",
+                            904977,
+                            0)));
   }
 
   private static Consumer<AccBroadcastingInbound.BroadcastingEvent> expect(
-      int success, int readOnly, String error) {
+          AccBroadcastingInbound.BroadcastType type, String msg, int timeMs, int carId) {
     return result -> {
-      System.out.println(result);
+      assertEquals(type, result.type());
+      assertEquals(msg, result.msg().data());
+      assertEquals(timeMs, result.timeMs());
+      assertEquals(carId, result.carId());
     };
   }
+
 
 }
