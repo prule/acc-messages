@@ -27,22 +27,36 @@ class RegistrationResultTest {
   }
 
   private static Stream<Arguments> provideRegistrationResults() {
+    /*
+      message type id (byte) then...
+
+      - id: connection_id
+        type: s4
+      - id: connection_success
+        type: u1
+      - id: is_read_only
+        type: u1
+      - id: error_message
+        type: acc_string
+     */
     return Stream.of(
-        // Success=1, ReadOnly=0, Error=""
-        Arguments.of("0101000000", expect(1, 0, "")),
-        Arguments.of("010203040045525252", expect(2, 3, "ERRR")));
+            // here, spaces are included to make it readable, these are removed before parsing
+        Arguments.of("01 05000000 01 0000 000000", expect(5, 1, 0, "")),
+        Arguments.of("01 02000000 03 04 0400 45525252", expect(2, 3, 4, "ERRR")));
   }
 
   private static Consumer<AccBroadcastingInbound.RegistrationResult> expect(
-      int success, int readOnly, String error) {
+      int connection_id, int success, int readOnly, String error) {
     return result -> {
+      assertEquals(connection_id, result.connectionId());
       assertEquals(success, result.connectionSuccess());
       assertEquals(readOnly, result.isReadOnly());
       assertEquals(error, result.errorMessage().data());
     };
   }
 
-  private static byte[] hexStringToByteArray(String s) {
+  private static byte[] hexStringToByteArray(String in) {
+    String s = in.replaceAll(" ", ""); // remove spaces
     int len = s.length();
     byte[] data = new byte[len / 2];
     for (int i = 0; i < len; i += 2) {

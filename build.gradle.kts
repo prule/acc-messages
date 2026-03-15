@@ -7,10 +7,6 @@ plugins {
 group = "io.github.prule.acc.messages"
 version = "1.0-SNAPSHOT"
 
-kaitai {
-    packageName = "io.github.prule.acc.messages"
-}
-
 repositories {
     mavenCentral()
 }
