@@ -1,5 +1,6 @@
 package io.github.prule.acc.messages;
 
+import static io.github.prule.acc.messages.Utils.hexStringToByteArray;
 import static org.junit.jupiter.api.Assertions.*;
 
 import io.kaitai.struct.ByteBufferKaitaiStream;
@@ -40,14 +41,4 @@ class RealTimeUpdateTest {
     };
   }
 
-  private static byte[] hexStringToByteArray(String s) {
-    int len = s.length();
-    byte[] data = new byte[len / 2];
-    for (int i = 0; i < len; i += 2) {
-      int digit1 = Character.digit(s.charAt(i), 16);
-      int digit2 = Character.digit(s.charAt(i + 1), 16);
-      data[i / 2] = (byte) ((digit1 << 4) + digit2);
-    }
-    return data;
-  }
 }
