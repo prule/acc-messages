@@ -11,18 +11,13 @@ This project contains Kaitai Struct definitions for the Assetto Corsa Competizio
 
 ## Usage
 
-Generate the Java classes using the Gradle task:
-
-```shell
-./gradlew generateKaitai
-```
-
-Or manually:
+Generate the Java classes manually:
 
 ```shell
 kaitai-struct-compiler --outdir src/main/java --java-package io.github.prule.acc.messages -t java ksy/acc_broadcasting_inbound.ksy ksy/acc_broadcasting_outbound.ksy
 ```
 
+Install the jar locally so other projects can use it:
 
 ```shell
 ./gradlew publishToMavenLocal
