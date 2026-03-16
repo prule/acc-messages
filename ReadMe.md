@@ -48,6 +48,10 @@ A broadcast event is sent when a lap completes
 }
 ```
 
+The server admin handbook can be found in 
+```
+SteamLibrary\steamapps\common\Assetto Corsa Competizione Dedicated Server\server\ServerAdminHandbook.pdf
+```
 
-Server handbook: https://www.mediafire.com/file/r280kefk4bp914f/ServerAdminHandbook.pdf/file
+
 
