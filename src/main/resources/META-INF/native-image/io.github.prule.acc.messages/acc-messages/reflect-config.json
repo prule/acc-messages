@@ -1,0 +1,8 @@
+[
+  {
+    "name": "io.github.prule.acc.messages.AccBroadcastingInbound$BroadcastingEvent",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
