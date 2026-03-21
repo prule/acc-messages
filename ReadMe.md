@@ -32,7 +32,7 @@ kaitai-struct-compiler --outdir src/main/java --java-package io.github.prule.acc
 Install the jar locally so other projects can use it:
 
 ```shell
-./gradlew publishToMavenLocal
+./gradlew clean publishToMavenLocal
 ```
 
 ## Formatting
