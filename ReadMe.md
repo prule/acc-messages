@@ -3,7 +3,7 @@
 This project contains Kaitai Struct definitions for the Assetto Corsa Competizione (ACC) Broadcasting UDP Protocol. This allows us to generate java classes representing the messages so we can easily consume them.
 
 > Configuring ACC:
-> In `C:\Users\paulr\Documents\Assetto Corsa Competizione\Config\broadcasting.json` you can find the broadcasting configuration - you'll need the port and connection password from here:
+> In `C:\Users\<username>\Documents\Assetto Corsa Competizione\Config\broadcasting.json` you can find the broadcasting configuration - you'll need the port and connection password from here:
 > ```json
 > {                                                                                                                         
 >   "updListenerPort": 9000,
