@@ -1,5 +1,7 @@
 # ACC Broadcasting Messages
 
+[![](https://jitpack.io/v/prule/acc-messages.svg)](https://jitpack.io/#prule/acc-messages)
+
 This project contains Kaitai Struct definitions for the Assetto Corsa Competizione (ACC) Broadcasting UDP Protocol. This allows us to generate java classes representing the messages so we can easily consume them.
 
 > Configuring ACC:
