@@ -1,6 +1,18 @@
 # ACC Broadcasting Messages
 
-This project contains Kaitai Struct definitions for the Assetto Corsa Competizione (ACC) Broadcasting UDP Protocol.
+This project contains Kaitai Struct definitions for the Assetto Corsa Competizione (ACC) Broadcasting UDP Protocol. This allows us to generate java classes representing the messages so we can easily consume them.
+
+> Configuring ACC:
+> In `C:\Users\paulr\Documents\Assetto Corsa Competizione\Config\broadcasting.json` you can find the broadcasting configuration - you'll need the port and connection password from here:
+> ```json
+> {                                                                                                                         
+>   "updListenerPort": 9000,
+>   "connectionPassword": "asd",
+>   "commandPassword": ""
+> }
+> ```
+> For information on ACC broadcasting and the ACC Broadcasting Test Client see https://github.com/prule/acc-messages/blob/main/docs/AccBroadcastingExample/ReadMe.md
+
 
 ## Prerequisites
 
