@@ -8,6 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Builds byte arrays representing messages we might send. Since Kaitai Struct doesn't support writing we need to do this manually.
+ */
 public class AccBroadcastingClient {
 
     private static final int PROTOCOL_VERSION = 4;
