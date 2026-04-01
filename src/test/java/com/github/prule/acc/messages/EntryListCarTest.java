@@ -1,6 +1,6 @@
-package io.github.prule.acc.messages;
+package com.github.prule.acc.messages;
 
-import static io.github.prule.acc.messages.Utils.hexStringToByteArray;
+import static com.github.prule.acc.messages.Utils.hexStringToByteArray;
 import static org.junit.jupiter.api.Assertions.*;
 
 import io.kaitai.struct.ByteBufferKaitaiStream;

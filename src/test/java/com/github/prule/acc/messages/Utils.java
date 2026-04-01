@@ -1,4 +1,4 @@
-package io.github.prule.acc.messages;
+package com.github.prule.acc.messages;
 
 public class Utils {
     /**
