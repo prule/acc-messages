@@ -1,0 +1,12 @@
+{
+  "msgType": "REGISTRATION_RESULT",
+  "body": {
+    "connectionId": 2,
+    "connectionSuccess": 1,
+    "isReadOnly": 0,
+    "errorMessage": {
+      "length": 52,
+      "data": "Wrong command mode password, readonly access granted"
+    }
+  }
+}

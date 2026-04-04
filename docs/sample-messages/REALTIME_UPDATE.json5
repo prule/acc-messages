@@ -1,0 +1,48 @@
+{
+  "msgType": "REALTIME_UPDATE",
+  "body": {
+    "eventIndex": 0,
+    "sessionIndex": 0,
+    "sessionType": null,
+    "phase": "PRE_SESSION",
+    "sessionTimeMs": 0.0,
+    "sessionEndTimeMs": 600000.0,
+    "focusedCarIndex": 13,
+    "activeCameraSet": {
+      "length": 8,
+      "data": "Drivable"
+    },
+    "activeCamera": {
+      "length": 7,
+      "data": "Cockpit"
+    },
+    "currentHudPage": {
+      "length": 9,
+      "data": "Basic HUD"
+    },
+    "isReplayPlaying": 0,
+    "replaySessionTime": null,
+    "replayRemainingTime": null,
+    "timeOfDaySeconds": 54001.574,
+    "ambientTemp": 30,
+    "trackTemp": 39,
+    "clouds": 0,
+    "rainLevel": 0,
+    "wetness": 0,
+    "bestSessionLap": {
+      "lapTimeMs": 2147483647,
+      "carIndex": 0,
+      "driverIndex": 0,
+      "numSplits": 3,
+      "splits": [
+        2147483647,
+        2147483647,
+        2147483647
+      ],
+      "isInvalid": 0,
+      "isValidForBest": 1,
+      "isOutlap": 0,
+      "isInlap": 0
+    }
+  }
+}

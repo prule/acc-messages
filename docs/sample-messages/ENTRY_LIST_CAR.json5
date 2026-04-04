@@ -1,0 +1,34 @@
+{
+  "msgType": "ENTRY_LIST_CAR",
+  "body": {
+    "carId": 0,
+    "carModelType": 1,
+    "teamName": {
+      "length": 12,
+      "data": "Black Falcon"
+    },
+    "raceNumber": 4,
+    "cupCategory": "OVERALL_PRO",
+    "driverIndex": 0,
+    "nationality": 2,
+    "numDrivers": 1,
+    "drivers": [
+      {
+        "firstName": {
+          "length": 4,
+          "data": "Luca"
+        },
+        "lastName": {
+          "length": 5,
+          "data": "Stolz"
+        },
+        "shortName": {
+          "length": 3,
+          "data": "STO"
+        },
+        "category": "SILVER",
+        "nationality": 2
+      }
+    ]
+  }
+}

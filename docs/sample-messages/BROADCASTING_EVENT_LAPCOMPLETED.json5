@@ -1,0 +1,12 @@
+{
+  "msgType": "BROADCASTING_EVENT",
+  "body": {
+    "type": "LAPCOMPLETED",
+    "msg": {
+      "length": 9,
+      "data": "01:43.587"
+    },
+    "timeMs": 472062,
+    "carId": 13
+  }
+}

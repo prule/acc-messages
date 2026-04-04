@@ -1,0 +1,61 @@
+{
+  "msgType": "REALTIME_CAR_UPDATE",
+  "body": {
+    "carIndex": 19,
+    "driverIndex": 0,
+    "driverCount": 1,
+    "gear": 1,
+    "worldPosX": 255.00882,
+    "worldPosY": -319.3802,
+    "yaw": -0.23500933,
+    "carLocation": "PITLANE",
+    "kmh": 0,
+    "position": 18,
+    "cupPosition": 7,
+    "trackPosition": 0,
+    "splinePosition": 0.006727465,
+    "laps": 6,
+    "delta": 56906,
+    "bestSessionLap": {
+      "lapTimeMs": 101177,
+      "carIndex": 19,
+      "driverIndex": 0,
+      "numSplits": 3,
+      "splits": [
+        24865,
+        48732,
+        27355
+      ],
+      "isInvalid": 0,
+      "isValidForBest": 1,
+      "isOutlap": 0,
+      "isInlap": 0
+    },
+    "lastLap": {
+      "lapTimeMs": 101392,
+      "carIndex": 19,
+      "driverIndex": 0,
+      "numSplits": 3,
+      "splits": [
+        24865,
+        48960,
+        27567
+      ],
+      "isInvalid": 0,
+      "isValidForBest": 1,
+      "isOutlap": 0,
+      "isInlap": 0
+    },
+    "currentLap": {
+      "lapTimeMs": 58042,
+      "carIndex": 19,
+      "driverIndex": 0,
+      "numSplits": 0,
+      "splits": [],
+      "isInvalid": 0,
+      "isValidForBest": 1,
+      "isOutlap": 0,
+      "isInlap": 1
+    }
+  }
+}
