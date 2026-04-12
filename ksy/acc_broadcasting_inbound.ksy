@@ -272,11 +272,13 @@ enums:
 
   session_type:
     0: practice
-    1: qualifying
-    2: superpole
-    3: race
-    4: hotlap
-    9: unknown
+    4: qualifying
+    9: super_pole
+    10: race
+    11: hotlap
+    12: hot_stint
+    13: hotlap_superpole
+    14: replay
 
   session_phase:
     0: none

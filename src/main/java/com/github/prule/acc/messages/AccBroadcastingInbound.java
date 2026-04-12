@@ -140,16 +140,18 @@ public class AccBroadcastingInbound extends KaitaiStruct {
 
     public enum SessionType {
         PRACTICE(0),
-        QUALIFYING(1),
-        SUPERPOLE(2),
-        RACE(3),
-        HOTLAP(4),
-        UNKNOWN(9);
+        QUALIFYING(4),
+        SUPER_POLE(9),
+        RACE(10),
+        HOTLAP(11),
+        HOT_STINT(12),
+        HOTLAP_SUPERPOLE(13),
+        REPLAY(14);
 
         private final long id;
         SessionType(long id) { this.id = id; }
         public long id() { return id; }
-        private static final Map<Long, SessionType> byId = new HashMap<Long, SessionType>(6);
+        private static final Map<Long, SessionType> byId = new HashMap<Long, SessionType>(8);
         static {
             for (SessionType e : SessionType.values())
                 byId.put(e.id(), e);
