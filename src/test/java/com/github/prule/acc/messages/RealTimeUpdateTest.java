@@ -34,7 +34,7 @@ class RealTimeUpdateTest {
                     expect(
                             0,
                             0,
-                            null,
+                            AccBroadcastingInbound.SessionType.RACE,
                             AccBroadcastingInbound.SessionPhase.SESSION,
                             "Drivable",
                             "Cockpit",

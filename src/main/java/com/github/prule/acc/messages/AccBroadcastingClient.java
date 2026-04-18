@@ -18,6 +18,7 @@ public class AccBroadcastingClient {
     private static final byte OP_UNREGISTER_COMMAND_APPLICATION = 9;
     private static final byte OP_REQUEST_ENTRY_LIST = 10;
     private static final byte OP_REQUEST_TRACK_DATA = 11;
+    private static final byte OP_CHANGE_FOCUS = 50;
 
     /**
      * Constructs the payload for a REGISTER_COMMAND_APPLICATION message.
@@ -85,6 +86,39 @@ public class AccBroadcastingClient {
         buffer.order(ByteOrder.LITTLE_ENDIAN);
         buffer.put(OP_REQUEST_TRACK_DATA);
         buffer.putInt(connectionId);
+        return buffer.array();
+    }
+
+    /**
+     * Constructs the payload for a CHANGE_FOCUS message.
+     */
+    public byte[] buildChangeFocus(int connectionId, boolean changeCarFocus, int carIndex, boolean changeCamera, String cameraSet, String camera) {
+        byte[] cameraSetBytes = cameraSet.getBytes(StandardCharsets.UTF_8);
+        byte[] cameraBytes = camera.getBytes(StandardCharsets.UTF_8);
+
+        // Calculate total size:
+        // 1 byte (MsgType) + 4 bytes (ConnectionId)
+        // + 1 byte (changeCarFocus) + 2 bytes (carIndex)
+        // + 1 byte (changeCamera)
+        // + (2 bytes len + N bytes data) for cameraSet
+        // + (2 bytes len + N bytes data) for camera
+        int size = 1 + 4
+                 + 1 + 2
+                 + 1
+                 + 2 + cameraSetBytes.length
+                 + 2 + cameraBytes.length;
+
+        ByteBuffer buffer = ByteBuffer.allocate(size);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+
+        buffer.put(OP_CHANGE_FOCUS);
+        buffer.putInt(connectionId);
+        buffer.put((byte) (changeCarFocus ? 1 : 0));
+        buffer.putShort((short) carIndex);
+        buffer.put((byte) (changeCamera ? 1 : 0));
+        writeAccString(buffer, cameraSetBytes);
+        writeAccString(buffer, cameraBytes);
+
         return buffer.array();
     }
 
