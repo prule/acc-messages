@@ -29,19 +29,19 @@ class RegistrationResultTest {
 
   private static Stream<Arguments> provideRegistrationResults() {
     /*
-      message type id (byte) then...
+     message type id (byte) then...
 
-      - id: connection_id
-        type: s4
-      - id: connection_success
-        type: u1
-      - id: is_read_only
-        type: u1
-      - id: error_message
-        type: acc_string
-     */
+     - id: connection_id
+       type: s4
+     - id: connection_success
+       type: u1
+     - id: is_read_only
+       type: u1
+     - id: error_message
+       type: acc_string
+    */
     return Stream.of(
-            // here, spaces are included to make it readable, these are removed before parsing
+        // here, spaces are included to make it readable, these are removed before parsing
         Arguments.of("01 05000000 01 0000 000000", expect(5, 1, 0, "")),
         Arguments.of("01 02000000 03 04 0400 45525252", expect(2, 3, 4, "ERRR")));
   }
@@ -55,5 +55,4 @@ class RegistrationResultTest {
       assertEquals(error, result.errorMessage().data());
     };
   }
-
 }

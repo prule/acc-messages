@@ -14,8 +14,7 @@ class RealTimeUpdateTest {
 
   @ParameterizedTest
   @MethodSource("provideResults")
-  void testResult(
-      String hexString, Consumer<AccBroadcastingInbound.RealtimeUpdate> verifier) {
+  void testResult(String hexString, Consumer<AccBroadcastingInbound.RealtimeUpdate> verifier) {
 
     byte[] data = hexStringToByteArray(hexString);
     ByteBufferKaitaiStream stream = new ByteBufferKaitaiStream(data);
@@ -29,46 +28,46 @@ class RealTimeUpdateTest {
 
   private static Stream<Arguments> provideResults() {
     return Stream.of(
-            Arguments.of(
-                    "02000000000a0504988b49f00bae480d00000008004472697661626c650700436f636b706974090042617369632048554400ba9657471e26000000d96b01000500000003d15b0000bc9f00004b70000000010000",
-                    expect(
-                            0,
-                            0,
-                            AccBroadcastingInbound.SessionType.RACE,
-                            AccBroadcastingInbound.SessionPhase.SESSION,
-                            "Drivable",
-                            "Cockpit",
-                            "Basic HUD",
-                            0,
-                            30,
-                            38,
-                            0,
-                            0,
-                            0,
-                            93145,
-                            5,
-                            0,
-                            3)));
+        Arguments.of(
+            "02000000000a0504988b49f00bae480d00000008004472697661626c650700436f636b706974090042617369632048554400ba9657471e26000000d96b01000500000003d15b0000bc9f00004b70000000010000",
+            expect(
+                0,
+                0,
+                AccBroadcastingInbound.SessionType.RACE,
+                AccBroadcastingInbound.SessionPhase.SESSION,
+                "Drivable",
+                "Cockpit",
+                "Basic HUD",
+                0,
+                30,
+                38,
+                0,
+                0,
+                0,
+                93145,
+                5,
+                0,
+                3)));
   }
 
   private static Consumer<AccBroadcastingInbound.RealtimeUpdate> expect(
-          int eventIndex,
-          int sessionIndex,
-          AccBroadcastingInbound.SessionType sessionType,
-          AccBroadcastingInbound.SessionPhase phase,
-          String activeCameraSet,
-          String activeCamera,
-          String currentHudPage,
-          int isReplayPlaying,
-          int ambientTemp,
-          int trackTemp,
-          int clouds,
-          int rainLevel,
-          int wetness,
-          int bestLapTimeMs,
-          int bestLapCarIndex,
-          int bestLapDriverIndex,
-          int bestLapNumSplits) {
+      int eventIndex,
+      int sessionIndex,
+      AccBroadcastingInbound.SessionType sessionType,
+      AccBroadcastingInbound.SessionPhase phase,
+      String activeCameraSet,
+      String activeCamera,
+      String currentHudPage,
+      int isReplayPlaying,
+      int ambientTemp,
+      int trackTemp,
+      int clouds,
+      int rainLevel,
+      int wetness,
+      int bestLapTimeMs,
+      int bestLapCarIndex,
+      int bestLapDriverIndex,
+      int bestLapNumSplits) {
     return result -> {
       assertEquals(eventIndex, result.eventIndex());
       assertEquals(sessionIndex, result.sessionIndex());
@@ -93,5 +92,4 @@ class RealTimeUpdateTest {
       assertEquals(bestLapNumSplits, lap.numSplits());
     };
   }
-
 }

@@ -14,8 +14,7 @@ class EntryListCarTest {
 
   @ParameterizedTest
   @MethodSource("provideResults")
-  void testResult(
-      String hexString, Consumer<AccBroadcastingInbound.EntryListCar> verifier) {
+  void testResult(String hexString, Consumer<AccBroadcastingInbound.EntryListCar> verifier) {
 
     byte[] data = hexStringToByteArray(hexString);
     ByteBufferKaitaiStream stream = new ByteBufferKaitaiStream(data);
@@ -29,38 +28,38 @@ class EntryListCarTest {
 
   private static Stream<Arguments> provideResults() {
     return Stream.of(
-            Arguments.of(
-                    "060000010c00426c61636b2046616c636f6e04000000000002000104004c756361050053746f6c7a030053544f010200",
-                    expect(
-                            0,
-                            1,
-                            "Black Falcon",
-                            4,
-                            AccBroadcastingInbound.CupCategory.OVERALL_PRO,
-                            0,
-                            2,
-                            1,
-                            "Luca",
-                            "Stolz",
-                            "STO",
-                            AccBroadcastingInbound.DriverCategory.SILVER,
-                            2)));
+        Arguments.of(
+            "060000010c00426c61636b2046616c636f6e04000000000002000104004c756361050053746f6c7a030053544f010200",
+            expect(
+                0,
+                1,
+                "Black Falcon",
+                4,
+                AccBroadcastingInbound.CupCategory.OVERALL_PRO,
+                0,
+                2,
+                1,
+                "Luca",
+                "Stolz",
+                "STO",
+                AccBroadcastingInbound.DriverCategory.SILVER,
+                2)));
   }
 
   private static Consumer<AccBroadcastingInbound.EntryListCar> expect(
-          int carId,
-          int carModelType,
-          String teamName,
-          int raceNumber,
-          AccBroadcastingInbound.CupCategory cupCategory,
-          int driverIndex,
-          int nationality,
-          int numDrivers,
-          String firstName,
-          String lastName,
-          String shortName,
-          AccBroadcastingInbound.DriverCategory driverCategory,
-          int driverNationality) {
+      int carId,
+      int carModelType,
+      String teamName,
+      int raceNumber,
+      AccBroadcastingInbound.CupCategory cupCategory,
+      int driverIndex,
+      int nationality,
+      int numDrivers,
+      String firstName,
+      String lastName,
+      String shortName,
+      AccBroadcastingInbound.DriverCategory driverCategory,
+      int driverNationality) {
     return result -> {
       assertEquals(carId, result.carId());
       assertEquals(carModelType, result.carModelType());
@@ -80,5 +79,4 @@ class EntryListCarTest {
       assertEquals(driverNationality, driver.nationality());
     };
   }
-
 }
