@@ -20,7 +20,7 @@ spotless {
 
 dependencies {
     api("io.kaitai:kaitai-struct-runtime:0.11")
-    testImplementation(platform("org.junit:junit-bom:6.0.3"))
+    testImplementation(platform("org.junit:junit-bom:6.1.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
