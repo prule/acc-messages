@@ -2,7 +2,7 @@ plugins {
     id("java")
     kotlin("jvm")
     id("maven-publish")
-    id("com.diffplug.spotless") version "8.4.0"
+    id("com.diffplug.spotless") version "8.6.0"
 }
 
 group = "com.github.prule"
